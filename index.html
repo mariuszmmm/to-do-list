@@ -17,14 +17,18 @@
 </head>
 
 <body class="body">
-    <form class="js-form">
-        <h1>Lista zadań</h1>
-        <h2>Dodaj nowe zadanie</h2>
-        <input class="js-newTask" name="taskName" value="Co jest do zrobienia?">
-        <button class="js-addTaskButton">Dodaj zadanie</button>
-        <h2>Lista zadań</h2>
+    <form class="form js-form">
+        <h1 class="form__header">Lista zadań</h1>
+        <h2 class="form__subHeader">Dodaj nowe zadanie</h2>
+        <div class="form__newTaskContainer">
+            <input class="form__newTask js-newTask" name="taskName" placeholder="Co jest do zrobienia ?">
+            <button class="form__newTaskButton js-addTaskButton">Dodaj zadanie</button>
+        </div>
+        <div class="form__tasksContainer">
+            <h2 class="form__subHeader">Lista zadań</h2>
+            <ul class="form__tasks js-tasks"></ul>
+        </div>
     </form>
-    <ul class="js-tasks"></ul>
 </body>
 
 </html>
