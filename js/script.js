@@ -41,7 +41,8 @@
 
     for (const task of tasks) {
       htmlString += `  
-        <li class="form__taskContainer">
+        <li class="form__taskContainer"
+        >
           <button class="form__doneButton js-done">${task.done ? "🗸" : ""}</button>
           <p class="form__task${task.done ? " form__task--done\"" : "\""}>${task.content}</p>
           <button class="form__removeButton js-remove">🗑︎</button>
