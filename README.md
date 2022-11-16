@@ -5,6 +5,7 @@ The To-do List application allows you to:
 - adding new tasks to the list;
 - marking completed tasks;
 - removing tasks from the list.
+
 The application has been prepared for convenient use also on smaller devices.
 
 #
