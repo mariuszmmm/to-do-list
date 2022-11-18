@@ -21,11 +21,15 @@ The application has been prepared for convenient use also on smaller devices.
 
 - HTML 5
 
-- Flex CSS
+- CSS Grid
 
 - Media queries
 
 - BEM convention
+
+- Normalize.css
+
+
 
 
 
