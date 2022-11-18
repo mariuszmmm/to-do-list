@@ -1,97 +1,32 @@
 .form {
-    background-color: white;
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
 }
 
 @media (max-width: 767px) {
     .form {
-        width: 95%;
+        grid-template-columns: 1fr;
     }
 }
 
-.form__header {
-    font-size: 34px;
-    font-weight: 700;
-    background-color: #ededed;
-    margin: 0;
-    padding-top: 50px;
-    padding-bottom: 15px;
-}
-
-.form__subHeader {
-    font-size: 22px;
-    font-weight: 700;
-    border-top: 10px solid #ededed;
-    border-bottom: 2px solid #ededed;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.form__newTaskContainer {
-    font-size: 17px;
-    padding: 0px 10px 10px;
-}
-
-.form__newTask {
-    border: 2px solid #ededed;
-    margin: 0px 10px 10px;
+.form__input {
     padding: 10px;
+    border: 1px solid #ddd;
+    min-width: 200px;
 }
 
-.form__newTaskButton {
-    background-color: #007481;
+.form__button {
+    padding: 10px;
+    background-color: hsl(180, 100%, 25%);
     color: white;
     border: none;
-    margin: 0px 10px 10px;
-    padding: 10px;
 }
 
-.form__tasksContainer {
-    padding-bottom: 20px;
+.form__button:hover {
+    background-color: hsl(180, 100%, 30%);
 }
 
-.form__tasks {
-    margin: 0;
-    padding: 0;
-}
-
-.form__taskContainer {
-    border-bottom: 2px solid #ededed;
-    margin: 0 10px;
-    padding: 10px;
-}
-
-.form__doneButton {
-    width: 33px;
-    height: 33px;
-    background-color: #197b21;
-    color: white;
-    border: none;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.form__task {
-    border: none;
-    font-weight: 400;
-    text-align: justify;
-    margin: 0 10px;
-    padding: 0;
-}
-
-.form__task--done {
-    text-decoration: line-through;
-}
-
-.form__removeButton {
-    width: 33px;
-    height: 33px;
-    background-color: #ed293a;
-    color: white;
-    border: none;
-    font-size: 20px;
-    font-weight: 400;
+.form__button:active {
+    background-color: hsl(180, 100%, 35%);
 }
