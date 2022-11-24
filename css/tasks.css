@@ -13,6 +13,10 @@
     border-bottom: 1px solid #ddd;
 }
 
+.task__item--hide {
+    display: none;
+}
+
 .tasks__content {
     word-break: break-word;
     margin: 0;
