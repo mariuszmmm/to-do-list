@@ -5,10 +5,20 @@
 }
 
 .section__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     font-size: 20px;
     padding: 20px;
     margin: 0;
     border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 767px) {
+    .section__header {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
 }
 
 .section__body {

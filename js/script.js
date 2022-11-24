@@ -102,10 +102,10 @@
 
     if (tasks.length > 0) {
       buttonsListHTMLContent = ` 
-        <button ${hideDoneButton ? "" : "disabled"} class="header__button header__button--hideDone js-hideDone">
+        <button ${hideDoneButton ? "" : "disabled"} class="header__button js-hideDone">
           ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
         </button>
-        <button ${allDoneButton ? "" : "disabled"} class="header__button header__button--allDone js-allDone">
+        <button ${allDoneButton ? "" : "disabled"} class="header__button js-allDone">
           Ukończ wszystkie
         </button>
       `;
