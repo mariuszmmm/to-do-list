@@ -88,7 +88,7 @@
             ${task.content}
           </p>
           <button class="tasks__button tasks__button--remove js-remove">
-          🗑︎
+            🗑︎
           </button>
         </li>
       `;
@@ -160,4 +160,3 @@
   };
   init();
 }
-
