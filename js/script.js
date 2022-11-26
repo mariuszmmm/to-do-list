@@ -1,16 +1,6 @@
 {
   let tasks = [];
-  let hideDoneButton = false;
-  let allDoneButton = false;
   let hideDoneTasks = false;
-
-  const hideDone = () => {
-    hideDoneButton = (tasks.some(({ done }) => done));
-  };
-
-  const allDone = () => {
-    allDoneButton = !(tasks.every(({ done }) => done));
-  };
 
   const toggleHideDone = () => {
     hideDoneTasks = !hideDoneTasks
@@ -19,8 +9,6 @@
 
   const setAllDone = () => {
     tasks = tasks.map(task => ({ ...task, done: true }));
-    hideDone();
-    allDone();
     render();
   };
 
@@ -29,8 +17,6 @@
       ...tasks.slice(0, taskIndex),
       ...tasks.slice(taskIndex + 1),
     ];
-    hideDone();
-    allDone();
     render();
   };
 
@@ -41,12 +27,10 @@
       { ...tasks[taskIndex], done },
       ...tasks.slice(taskIndex + 1),
     ];
-    hideDone();
-    allDone();
     render();
   };
 
-  const addNewTas = (newTaskContent) => {
+  const addNewTask = (newTaskContent) => {
     tasks = [
       ...tasks,
       { content: newTaskContent }
@@ -102,10 +86,13 @@
 
     if (tasks.length > 0) {
       buttonsListHTMLContent = ` 
-        <button ${hideDoneButton ? "" : "disabled"} class="header__button js-hideDone">
-          ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+        <button class="header__button js-hideDone">
+          ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
         </button>
-        <button ${allDoneButton ? "" : "disabled"} class="header__button js-allDone">
+        <button
+          class="header__button js-allDone"
+          ${tasks.every(({ done }) => done) ? " disabled" : ""}
+        >
           Ukończ wszystkie
         </button>
       `;
@@ -148,7 +135,7 @@
       return;
     };
 
-    addNewTas(newTaskContent);
+    addNewTask(newTaskContent);
     newTask.value = "";
     newTask.focus();
   };
