@@ -8,7 +8,10 @@
   };
 
   const setAllDone = () => {
-    tasks = tasks.map(task => ({ ...task, done: true }));
+    tasks = tasks.map((task) => ({
+      ...task,
+      done: true,
+    }));
     render();
   };
 
@@ -21,10 +24,12 @@
   };
 
   const toggleTaskDone = (taskIndex) => {
-    const done = !tasks[taskIndex].done
     tasks = [
       ...tasks.slice(0, taskIndex),
-      { ...tasks[taskIndex], done },
+      {
+        ...tasks[taskIndex],
+        done: !tasks[taskIndex].done
+      },
       ...tasks.slice(taskIndex + 1),
     ];
     render();
@@ -35,7 +40,6 @@
       ...tasks,
       { content: newTaskContent }
     ];
-    allDoneButton = (tasks.length > 0);
     render();
   };
 
@@ -64,11 +68,11 @@
 
     for (const task of tasks) {
       tasksListHTMLContent += `  
-        <li class="tasks__item ${(task.done && hideDoneTasks) ? "task__item--hide\"" : "\""}>
+        <li class="tasks__item ${(task.done && hideDoneTasks) ? "task__item--hide" : ""}">
           <button class="tasks__button tasks__button--toggleDone js-toggleDone">
             ${task.done ? "✔" : ""}
           </button>
-          <p class="tasks__content ${task.done ? "tasks__content--toggleDone\"" : "\""}>
+          <p class="tasks__content ${task.done ? "tasks__content--toggleDone" : ""}">
             ${task.content}
           </p>
           <button class="tasks__button tasks__button--remove js-remove">
@@ -104,21 +108,18 @@
   const bindButtonsEvents = () => {
 
     const hideDoneButtons = document.querySelector(".js-hideDone");
-    hideDoneButtons.addEventListener("click", () => {
-      toggleHideDone();
-    });
+    hideDoneButtons.addEventListener("click", toggleHideDone);
 
     const allDoneButtons = document.querySelector(".js-allDone");
-    allDoneButtons.addEventListener("click", () => {
-      setAllDone();
-    });
+    allDoneButtons.addEventListener("click", setAllDone);
   };
 
   const render = () => {
     renderTasks();
-    renderButtons();
-    bindRemoveEvents();
     bindToggleEvents();
+    bindRemoveEvents();
+
+    renderButtons();
     if (tasks.length > 0) {
       bindButtonsEvents();
     }

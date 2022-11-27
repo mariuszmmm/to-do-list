@@ -2,7 +2,7 @@
     border: solid 1px rgb(255, 255, 255);
     color: hsl(180 100% 25%);
     font-size: 16px;
-    background-color: white;
+    background-color: transparent;
     margin: 0 5px;
     padding: 0;
     transition: 250ms;
