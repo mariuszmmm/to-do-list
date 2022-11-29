@@ -20,6 +20,7 @@
 }
 
 .header__button:hover {
+    cursor: pointer;
     color: hsl(180 100% 30%);
 }
 
@@ -84,6 +85,7 @@
 }
 
 .tasks__button--toggleDone:hover {
+    cursor: pointer;
     background-color: hsl(120 61% 39%);
 }
 
@@ -100,6 +102,7 @@
 }
 
 .tasks__button--remove:hover {
+    cursor: pointer;
     background-color: hsl(348 83% 52%);
 }
 
